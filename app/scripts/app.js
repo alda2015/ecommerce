@@ -10,10 +10,11 @@
  */
 
 angular.module('Login',[]);
-
+angular.module('Inscription',[]);
+console.log("app.js");
 angular
   .module('ecommerceApp', [
-    'ngRoute','Login'
+    'ngRoute','Login','Inscription'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -25,4 +26,10 @@ angular
       /*.otherwise({
         redirectTo: '/'
       });*/
+
+      .when('/inscription',{
+        templateUrl:'views/inscription.html',
+        controller:'InscriptionCtrl',
+        //controllerAs:'signup'
+      })
   });
