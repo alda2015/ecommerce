@@ -1,5 +1,5 @@
 'use strict';
-angular.module()
+
 angular.module('Login')
   .controller('LoginCtrl', ['$scope',function ($scope) {
     $scope.test = "test";
