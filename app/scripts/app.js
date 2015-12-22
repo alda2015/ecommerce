@@ -9,7 +9,8 @@
  * Main module of the application.
  */
 
-angular.module('Login',[]);
+
+angular.module('Login',['ngCookies']);
 angular.module('Inscription',[]);
 console.log("app.js");
 angular
