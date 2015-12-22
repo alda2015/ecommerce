@@ -9,11 +9,11 @@
  * Main module of the application.
  */
 
-angular.module('Login',[]);
+angular.module('Login',['ngCookies']);
 
 angular
   .module('ecommerceApp', [
-    'ngRoute','Login'
+    'ngRoute','Login', 
   ])
   .config(function ($routeProvider) {
     $routeProvider
