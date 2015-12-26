@@ -12,25 +12,26 @@
 
 angular.module('Login',['ngCookies']);
 angular.module('Inscription',[]);
-console.log("app.js");
+angular.module('News',[]);
+
 angular
   .module('ecommerceApp', [
-    'ngRoute','Login','Inscription'
+    'ngRoute','Login','Inscription', 'News'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/login', {
         templateUrl: 'views/login.html',
-        controller: 'LoginCtrl',
-        controllerAs: 'login'
+        controller: 'LoginCtrl'
+        //controllerAs: 'login'
       })
-      /*.otherwise({
-        redirectTo: '/'
-      });*/
-
       .when('/inscription',{
         templateUrl:'views/inscription.html',
-        controller:'InscriptionCtrl',
+        controller:'InscriptionCtrl'
         //controllerAs:'signup'
+      })
+      .when('/news',{
+        templateUrl: 'views/news.html',
+        controller:  'NewsCtrl'
       })
   });
