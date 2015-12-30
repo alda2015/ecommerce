@@ -6,7 +6,7 @@ angular.module('Login')
     $scope.pwd = "repasser33";
     $scope.signin = function(){
     	LoginService.login($scope.email,$scope.pwd,function(response){
-    		$window.location.href="/ecommerce/app/"
+    		$window.location.href="/ecommerce/app/#/mine"
     	});
     }
   }])
@@ -20,23 +20,19 @@ angular.module('Login')
   				"mdp":pwd
   			}).success(function(response){
   				console.log('success ',response);
-  				service.setSession(response.email,response.id)
+  				service.setSession(response)
   				cb(response);
   			}).error(function(response){
   				console.log('failed ',response);
   				cb(response);
   			});
   		}
-  		service.setSession = function(email,id){
+  		service.setSession = function(user){
   			$rootScope.globals = {
-                currentUser: {
-                    email: email,
-                    id : id
-                }
+                currentUser: user
             };
-            console.log($rootScope.globals);
-            $cookies.put('globals', $rootScope.globals);
-            console.log($cookies.get('globals'));
+            $cookies.globals = $rootScope.globals;
+            console.log($cookies.globals.currentUser);
   		}
   		service.destroySession = function(){
   			$rootScope.globals= {}

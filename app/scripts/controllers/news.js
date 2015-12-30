@@ -1,7 +1,5 @@
 'use strict';
 
-var x = angular.module('News').controller('NewsCtrl');
-console.log(x);
 angular.module('News')
   .controller('NewsCtrl', ['$scope','$http' ,function ($scope,$http) {
     $scope.announcements = []
@@ -14,6 +12,5 @@ angular.module('News')
             console.log('failed ',response);
             $scope.announcements = response;
         });
-
     console.log('init News service');
   }]);
