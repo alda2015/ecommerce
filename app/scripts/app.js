@@ -32,7 +32,6 @@ angular
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
-        hideMenus: true
       })
       .when('/inscription',{
         templateUrl:'views/inscription.html',

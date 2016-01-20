@@ -19,6 +19,8 @@ angular.module('Announce')
           console.log('success '+response.id);
           $scope.title = response.title;
           $scope.datePost = response.datePost;
+                var d = new Date($scope.datePost);
+                $scope.datePost = d.getDate().toString()+"/"+d.getMonth().toString()+"/"+d.getFullYear().toString();
           $scope.desc = response.descr;
           $scope.prix = response.prix;
           $scope.surface = response.surface;
