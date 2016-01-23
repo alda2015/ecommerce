@@ -42,7 +42,12 @@
 	    </div>
 	  </div>
 	</div>
-	<img src="images/yeoman.png" width="350" class="img-thumbnail">
+	
+	<div id="image" class="img-thumbnail">
+		<div style="width: 400px;height: auto;overflow:hidden">
+			<img ng-src="data:image/JPEG;base64,{{photo}}">
+		</div>
+	</div>
 	<hr>
 	<table>
 		<tr><td>Posted by <a href="#">{{user}}</a></td><td>&nbsp;&nbsp;</td> <td><b>Date</b> {{datePost}}</td></tr>

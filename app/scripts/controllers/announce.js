@@ -27,6 +27,7 @@ angular.module('Announce')
           $scope.localisation = response.localisation;
           $scope.user = response.user;
           $scope.user_id = response.user;
+          $scope.photo = response.photo;
           if(typeof $cookies.globals !=  "undefined"){
             console.log($cookies.globals.currentUser.id,$scope.user_id);
             $scope.mine = $cookies.globals.currentUser.id == $scope.user_id;

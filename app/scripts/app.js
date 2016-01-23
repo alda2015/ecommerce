@@ -15,20 +15,27 @@ angular.module('News',[]);
 angular.module('Mine',['ngCookies']);
 angular.module('Profile',['ngCookies']);
 angular.module('Announce',['ngCookies']);
+angular.module('Test',['ngCookies']);
 
 angular
   .module('ecommerceApp', [
     'ngRoute',
     'ngCookies',
+    'ngFileUpload',
     'Login',
     'Inscription',
     'News',
     'Mine',
     'Announce',
-    'Profile'
+    'Profile',
+    'Test'
   ])
   .config(function ($routeProvider) {
     $routeProvider
+      .when('/image', {
+        templateUrl: 'views/test.html',
+        controller: 'desire'
+      })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',

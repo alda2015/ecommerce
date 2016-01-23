@@ -8,8 +8,14 @@
 
 	<table>
 		<tr ng-repeat="a in announcements">
-			<td><img src="images/yeoman.png" width="150" class="img-thumbnail"></td>
-			<td>&nbsp;&nbsp;</td>
+			<td>	
+				<!-- <div id="image" style="width: 50%;height: 50%" class="img-thumbnail" float="left"> -->
+				<div id="image" class="img-thumbnail">
+					<div style="width: 400px;height: auto;overflow:hidden">
+						<img ng-src="data:image/JPEG;base64,{{a.photo}}">
+					</div>
+				</div>
+			</td>
 			<td valign="top">
 				<h3><a href="#/a/{{a.id}}">{{a.title}}</a></h3>
 				<span class="glyphicon glyphicon-euro"> <b>Price</b> : {{a.prix}}</span><br>
