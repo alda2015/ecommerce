@@ -14,7 +14,7 @@ angular.module('Mine')
       $scope.desc = 'descrption';
       $scope.localisation = 'location';
       $scope.announcements = [];
-      $scope.foto = null;
+      $scope.photo = null;
       $scope.postA = function(){
         console.log('POST_A');
         $http.post('/ws/ecommerce_api/announcements/add/'+$cookies.globals.currentUser.id,{
@@ -35,6 +35,7 @@ angular.module('Mine')
           .success(function(response){
               console.log('success ',response);
               $scope.announcements = response; 
+              alert(announcements.photo);
               for(var i = 0;  i< $scope.announcements.length;i++){
                   var d = new Date($scope.announcements[i].datePost);
                   $scope.announcements[i].datePost = d.getDate().toString()+"/"+d.getMonth().toString()+"/"+d.getFullYear().toString();

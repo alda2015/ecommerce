@@ -40,7 +40,6 @@ angular.module('Login')
   		}
   		console.log('Init Service Login');
   		return service;
-
   }]);
 
 
